@@ -13,9 +13,11 @@ Feature: Search tests for ebay.com
       | Galaxy  |
       | Samsung |
 
-  Scenario : Search finds nothing
+  Scenario Outline: Search finds nothing (negative)
     Given User open "Search Page"
-    When User searches for "~!@#$%^&*()_+{}|:”>?<Ё!”№;%:?*()_+/Ъ,/.,;’[]\|" on "Search Page"
+    When User searches for "<incorrect data>" on "Search Page"
     Then User sees message "No exact matches found" on "Search Page"
-
-
+    Examples:
+      | incorrect data                      |
+      | afasasfjhfiwefiwu4vitn8unw4vi3tvun8 |
+      | йцукенгшщзхъфывпарлржылавльмт       |

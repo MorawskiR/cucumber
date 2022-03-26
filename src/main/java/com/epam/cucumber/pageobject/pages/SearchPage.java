@@ -40,7 +40,7 @@ public class SearchPage extends BasePage {
         return titles.stream()
                 .skip(1)
                 .map(element -> element.getText().toLowerCase())
-                .allMatch(title -> title.contains(itemName.toLowerCase()));
+                .anyMatch(title -> title.contains(itemName.toLowerCase()));
     }
 
     public String getErrorMessageForIncorrectSearching() {
