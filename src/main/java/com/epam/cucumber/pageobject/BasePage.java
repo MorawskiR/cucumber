@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.function.Function;
 
 import static com.epam.cucumber.properties.Properties.EXPLICIT_WAIT;
 
@@ -29,7 +28,6 @@ public abstract class BasePage {
     }
 
     public void waitForPageLoad() {
-
         Wait<WebDriver> wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
         wait.until(driver -> String
                 .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
