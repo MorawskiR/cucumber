@@ -13,7 +13,6 @@ import static com.epam.cucumber.steps.BaseSteps.webDriver;
 public class HomePageSteps {
     private final HomePage homePage = new HomePage(webDriver);
 
-
     @Given("User is on {string}")
     public void userIsOn(String pageName) {
         PAGES_STORAGE.put(pageName, homePage.open());
@@ -22,7 +21,6 @@ public class HomePageSteps {
     @When("User navigates to {string}")
     public void userNavigatesTo(String pageName) {
         PAGES_STORAGE.put(pageName, homePage.clickOnSignInButton());
-
     }
 
     @Then("User is successfully navigated to the {string}")

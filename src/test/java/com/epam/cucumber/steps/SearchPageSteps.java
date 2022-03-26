@@ -26,6 +26,7 @@ public class SearchPageSteps {
         Assert.assertTrue(((SearchPage)PAGES_STORAGE.get(pageName)).searchResultsContainInTheDescriptions(itemName),
                 "One or more search results don't contain ".concat(itemName));
     }
+
     @Then("User sees message {string} on {string}")
     public void userSeesMessageOn(String errorMessage, String pageName){
         Assert.assertEquals(((SearchPage)PAGES_STORAGE.get(pageName)).getErrorMessageForIncorrectSearching(),
