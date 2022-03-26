@@ -18,6 +18,7 @@ public class BaseSteps {
     public void initWebDriver() {
         webDriver = WebDriverFactory.getInstanceOfWebDriverFactory()
                 .getWebDriver();
+        webDriver.manage().window().maximize();
     }
 
     @After
