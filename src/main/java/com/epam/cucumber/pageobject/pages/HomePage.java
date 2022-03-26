@@ -7,15 +7,29 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
-    @FindBy(xpath = "//summary[@class=\"Header-link\"]/img")
-    private WebElement profileDropDownButton;
+    @FindBy(css = "#gh-ug.gh-ug-guest")
+    private WebElement signInButton;
+    @FindBy(id = "gh-ug")
+    private WebElement dropDownMenu;
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
     }
 
+    public HomePage open() {
+        webDriver.get("https://ebay.com/");
+
+        return this;
+    }
+
+    public SignInPage clickOnSignInButton() {
+        signInButton.click();
+
+        return new SignInPage(webDriver);
+    }
+
     public ProfileDropDownModule openProfileDropDown() {
-        profileDropDownButton.click();
+        dropDownMenu.click();
 
         return new ProfileDropDownModule(webDriver);
     }

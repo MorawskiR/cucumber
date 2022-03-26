@@ -16,7 +16,8 @@ public class BaseSteps {
 
     @Before
     public void initWebDriver() {
-        webDriver = WebDriverFactory.getInstanceOfWebDriverFactory().getWebDriver();
+        webDriver = WebDriverFactory.getInstanceOfWebDriverFactory()
+                .getWebDriver();
     }
 
     @After
