@@ -24,7 +24,11 @@ public class SearchPageSteps {
     @Then("User sees items as search results with {string} in titles on {string}")
     public void userSeesItemsAsSearchResultsWithInTitlesOn(String itemName, String pageName) {
         Assert.assertTrue(((SearchPage)PAGES_STORAGE.get(pageName)).searchResultsContainInTheDescriptions(itemName),
-                "One or more search results don't contain ".concat(itemName)
-                );
+                "One or more search results don't contain ".concat(itemName));
+    }
+    @Then("User sees message {string} on {string}")
+    public void userSeesMessageOn(String errorMessage, String pageName){
+        Assert.assertEquals(((SearchPage)PAGES_STORAGE.get(pageName)).getErrorMessageForIncorrectSearching(),
+                errorMessage, "Search finds products for incorrect data");
     }
 }

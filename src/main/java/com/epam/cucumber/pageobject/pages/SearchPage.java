@@ -14,6 +14,8 @@ public class SearchPage extends BasePage {
     private WebElement searchButton;
     @FindBy(className = "s-item__title")
     private List<WebElement> titles;
+    @FindBy(className = "srp-save-null-search__heading")
+    private WebElement errorMessageForIncorrectSearching;
 
     public SearchPage(WebDriver webDriver) {
         super(webDriver);
@@ -34,15 +36,14 @@ public class SearchPage extends BasePage {
 
     public boolean searchResultsContainInTheDescriptions(String itemName) {
         waitForPageLoad();
-        titles.stream()
-                .skip(1)
-                .map(WebElement::getText)
-                .map(String::toLowerCase).forEach(System.out::println);
+
         return titles.stream()
                 .skip(1)
-                .map(WebElement::getText)
-                .map(String::toLowerCase)
-                .allMatch(description -> description.contains(itemName.toLowerCase()));
+                .map(element -> element.getText().toLowerCase())
+                .allMatch(title -> title.contains(itemName.toLowerCase()));
     }
 
+    public String getErrorMessageForIncorrectSearching() {
+        return errorMessageForIncorrectSearching.getText();
+    }
 }
