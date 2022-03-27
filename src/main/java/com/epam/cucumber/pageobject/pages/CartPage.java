@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 public class CartPage extends BasePage {
     @FindBy(xpath = "//button[@data-test-id=\"cart-remove-item\"]")
     private WebElement removeSingleItemFromCartButton;
-    @FindBy(xpath = "//div[@class=\"empty-cart\"]/div[@class=\"font-title-3\"]/span/span/span")
+    @FindBy(xpath = "//div[@class=\"empty-cart\"]/div[@class=\"font-title-3\"]//span")
     private WebElement emptyCartMessage;
 
     public CartPage(WebDriver webDriver) {
