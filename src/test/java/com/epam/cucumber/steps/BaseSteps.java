@@ -11,13 +11,11 @@ import java.util.Map;
 
 public class BaseSteps {
     public static final Map<String, BasePage> PAGES_STORAGE = new HashMap<>();
-
     public static WebDriver webDriver;
 
     @Before
     public void initWebDriver() {
-        webDriver = WebDriverFactory.getInstanceOfWebDriverFactory()
-                .getWebDriver();
+        webDriver = WebDriverFactory.getInstanceOfWebDriverFactory().getWebDriver();
         webDriver.manage().window().maximize();
     }
 
