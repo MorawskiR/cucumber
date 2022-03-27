@@ -15,7 +15,7 @@ public class WebDriverFactory {
         return browser.getWebDriver();
     }
 
-    public static  WebDriverFactory getInstanceOfWebDriverFactory() {
+    public static WebDriverFactory getInstanceOfWebDriverFactory() {
         if (instanceOfWebDriverFactory == null) {
             instanceOfWebDriverFactory = new WebDriverFactory();
         }
