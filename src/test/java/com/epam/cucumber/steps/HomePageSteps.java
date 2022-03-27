@@ -33,6 +33,7 @@ public class HomePageSteps {
         String userInfo = ((HomePage) PAGES_STORAGE.get(pageName))
                 .openProfileDropDown()
                 .getUserNameInfo();
+
         Assert.assertEquals(userInfo, expectedUserInfo, "Username is wrong");
     }
 }

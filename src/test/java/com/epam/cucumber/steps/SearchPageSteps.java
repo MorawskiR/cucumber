@@ -1,6 +1,7 @@
 package com.epam.cucumber.steps;
 
 import com.epam.cucumber.pageobject.pages.SearchPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,9 +11,10 @@ import static com.epam.cucumber.steps.BaseSteps.PAGES_STORAGE;
 import static com.epam.cucumber.steps.BaseSteps.webDriver;
 
 public class SearchPageSteps {
+    private final SearchPage searchPage = new SearchPage(webDriver);
+
     @Given("User open {string}")
     public void userOpen(String pageName) {
-        SearchPage searchPage = new SearchPage(webDriver);
         PAGES_STORAGE.put(pageName, searchPage.open());
     }
 
